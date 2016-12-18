@@ -45,6 +45,10 @@ namespace Test
 
         private BaseVisitor[] test12Visitors = { new OpenMyProfileVisitor(), new UpdateProfileAddress(), new SaveChanges() };
 
+        private BaseVisitor[] test13Visitors = { new CinamArenaCity(), new TapAnyCinemaPhoto() };
+
+        private BaseVisitor[] test14Visitors = { new EnterCinemaToFind() };
+
         [OneTimeSetUpAttribute]
         public void Init()
         {
@@ -170,7 +174,7 @@ namespace Test
          * 3) В поле, напротив надписи Стандартный, в котором изначально стоит ноль, нажимаем на него и выбираем 1.
          * 4) Нажимаем кнопку Купить билеты.
          * 5) Появляется страница с выбором места.
-         * 6) Выбираем любое свободное место.
+         * 6) Jcnfdkztv оставляем предложенное место.
          * 7) Нажимаем подтвердить места.
          * 8) Нажимаем оплатить банковской карточкой.
          */
@@ -253,6 +257,29 @@ namespace Test
             }
 
             this.visitWithVisitors(this.test12Visitors);
+        }
+
+        /*
+         * 14. Галерея.
+         * 1) Нажимаем в меню Кинотеатры, ARENAcity, мотаем вниз, видим Фотогалерея. 
+         * 2) Нажимаем на любую фотографию, она открывается,  но переключиться на следующую фотографию, можно только вернувшись на предыдущую страницу и выбрать следующую фотографию, которую хотим посмотреть.
+         */
+        [TestCase]
+        public void Test94()
+        {
+            this.visitWithVisitors(this.test13Visitors);
+        }
+
+        /*
+         * 15. Поиск.
+         * 1) В правом верхнем углу находится поиск.
+         * 2) Вводим туда фильм который хотим найти, Моана и нажимаем на лупу. 
+         * 3) Выводится результат поиска,фильм Бриджит Моана, если такой имеется.
+         */
+        [TestCase]
+        public void Test95()
+        {
+            this.visitWithVisitors(this.test14Visitors);
         }
 
         private void visitWithVisitors(BaseVisitor[] visitors)

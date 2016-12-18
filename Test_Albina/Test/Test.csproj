@@ -69,11 +69,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DriverInstance.cs" />
+    <Compile Include="Visitors\CinamArenaCity.cs" />
+    <Compile Include="Visitors\DriverInstance.cs" />
     <Compile Include="Visitors\BaseVisitor.cs" />
     <Compile Include="Visitors\CartoonGenreVisitor.cs" />
     <Compile Include="Visitors\DismissAlert.cs" />
     <Compile Include="Visitors\DramaGenreVisitor.cs" />
+    <Compile Include="Visitors\EnterCinemaToFind.cs" />
     <Compile Include="Visitors\FinishCardReview.cs" />
     <Compile Include="Visitors\OpenMyProfileVisitor.cs" />
     <Compile Include="Visitors\PayWithCardVisitor.cs" />
@@ -90,6 +92,7 @@
     <Compile Include="Visitors\SetCinemaDateOrder.cs" />
     <Compile Include="Visitors\SetCinemaOrderAscending.cs" />
     <Compile Include="Visitors\SetCinemaOrderDescending.cs" />
+    <Compile Include="Visitors\TapAnyCinemaPhoto.cs" />
     <Compile Include="Visitors\TapBuyTicketButton.cs" />
     <Compile Include="Visitors\ToNowInTheatersVisitor.cs" />
     <Compile Include="tests\Tests.cs" />

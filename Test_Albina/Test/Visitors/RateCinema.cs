@@ -16,9 +16,23 @@ namespace Test.Visitors
 
         public void visit(IWebDriver driver)
         {
-            IWebElement fullStartElement = driver.FindElement(By.XPath("//div[@name='(5) Masterpiece']"));
+            IWebElement tapToSeeStars = driver.FindElement(By.XPath("//div[@name='(5) Masterpiece']"));
+            tapToSeeStars.Click();
+
+            Thread.Sleep(2000);
+
+            IWebElement vote = tapToSeeStars.FindElement(By.XPath("//div[@class='star_full']"));
+            vote.Click();
+
+            //IWebElement tapToSeeStars = driver.FindElement(By.XPath("//div[@class='movie-rating-star enableTooltip clickable']"));
+            //tapToSeeStars.Click();
+
+            //IWebElement vote = driver.FindElement(By.XPath("//div[@class='eventStarRate5 star_full']"));
+            //vote.Click();
+
+            //IWebElement fullStartElement = driver.FindElement(By.XPath("//div[@name='(5) Masterpiece']"));
             //new Actions(driver).MoveToElement(fullStartElement, 0, 0);
-            fullStartElement.Click();
+            //fullStartElement.Click();
         }
 
     }
